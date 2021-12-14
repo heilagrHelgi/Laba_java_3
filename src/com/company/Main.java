@@ -12,7 +12,7 @@ public class Main {
     /**
      * N - вызов метода (кол-во раз)
      */
-    private static int N = 10000;
+    private static int N = 100000;
 
     public static void main(String[] args) {
 
@@ -20,24 +20,22 @@ public class Main {
         LinkedList<Integer> Linked = new LinkedList<Integer>();
         Scanner scanner = new Scanner(System.in);
 
-        LocalTime start;
-        LocalTime finish;
+        //LocalTime start;
+        //LocalTime finish;
 
         System.out.println("N: " + N + "\n");
-        int operat = 0;
+        //int operat = 0;
         int n = 0;
-        while (n != 4) {
+        while (n != 2) {
             System.out.println("    ");
-            System.out.println("1. Добавление:  ");
-            System.out.println("2. Получение элемента:  ");
-            System.out.println("3. Удаление элемента:  ");
-            System.out.println("4. Завершить выполнение программы:  ");
+            System.out.println("1. Начать выполнение программы:  ");
+            System.out.println("2. Завершить выполнение программы:  ");
 
             if (scanner.hasNextInt()) {
                 n = scanner.nextInt();
             } else {
                 System.out.println("Вы ввели не целочисленное значение операции!  ");
-                break;
+                scanner.next();
             }
 
             switch (n) {
@@ -45,60 +43,27 @@ public class Main {
                 {
 
                     System.out.println("add: ");
-                    System.out.println("ArrayList: ");
-                    TimeGet.TestAdd(Array);
-                    System.out.println("LinkedList: ");
-                    TimeGet.TestAdd(Linked);
-                }
-                ;
-                break;
-
-                case 2:
-                {
-                    if (operat == 0) {
-
-                        System.out.println("add: ");
-                        System.out.println("ArrayList: ");
-                        TimeGet.TestAdd(Array);
-                        System.out.println("LinkedList: ");
-                        TimeGet.TestAdd(Linked);
-                        operat++;
-
-                    }
+                    System.out.println("ArrayList:  |" + TimeGet.TestAdd(Array) );
+                    //TimeGet.TestAdd(Array);
+                    System.out.println("LinkedList: |" + TimeGet.TestAdd(Linked));
+                    //TimeGet.TestAdd(Linked);
 
                     System.out.println("get: ");
-                    System.out.println("ArrayList: ");
-                    TimeGet.TestGet(Array);
-                    System.out.println("LinkedList: ");
-                    TimeGet.TestGet(Linked);
+                    System.out.println("ArrayList:  |" + TimeGet.TestGet(Array));
+                    //TimeGet.TestGet(Array);
+                    System.out.println("LinkedList: |" + TimeGet.TestGet(Linked));
+                    //TimeGet.TestGet(Linked);
 
+                    System.out.println("remove: ");
+                    System.out.println("ArrayList:  |" + TimeGet.TestRemove(Array));
+                    //TimeGet.TestRemove(Array);
+                    System.out.println("LinkedList: |" + TimeGet.TestRemove(Linked));
+                    //TimeGet.TestRemove(Linked);
                 }
                 ;
                 break;
-                case 3:
-                {
-                    if (operat == 0)
-                    {
 
-                        System.out.println("add: ");
-                        System.out.println("ArrayList: ");
-                        TimeGet.TestAdd(Array);
-                        System.out.println("LinkedList: ");
-                        TimeGet.TestAdd(Linked);
-                        operat++;
-
-                    }
-
-                    System.out.println("get: ");
-                    System.out.println("ArrayList: ");
-                    TimeGet.TestRemove(Array);
-                    System.out.println("LinkedList: ");
-                    TimeGet.TestRemove(Linked);
-
-
-                }
-                ;
-                break;
+                case 2: break;
 
                 default:
                     System.out.println("Вы ввели неверный номер операции! ");
